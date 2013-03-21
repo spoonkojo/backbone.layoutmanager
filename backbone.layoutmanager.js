@@ -679,8 +679,8 @@ var LayoutManager = Backbone.View.extend({
       options = view.options = _.defaults(options || {}, view.options,
         proto.options);
 
-      // Ensure view events are properly copied over.
-      viewOptions = _.pick(options, aConcat.call(["events"],
+      // Ensure view events and cleanup method are properly copied over.
+      viewOptions = _.pick(options, aConcat.call(["events", "cleanup"],
         _.values(options.events)));
 
       // Merge the View options into the View.
